@@ -21,11 +21,16 @@ import SharedButton from "../../components/SharedButton";
 import { useState } from "react";
 import { AlternateEmail } from "@mui/icons-material";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { customAxios } from "../../api/axios";
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const theme = useTheme()
   const isSmallScreen = useMediaQuery('(max-width: 800px)')
+
+  const handleLogin = () => {
+    customAxios.post("/api/Authentication/Login", { params: { emailId: email, password } })
+  }
   return (
     <Wrapper>
       {!isSmallScreen && (
@@ -68,7 +73,7 @@ const Login = () => {
                 width="60%"
                 type="primary"
                 text="Login"
-                onClick={() => console.log({ email, password })}
+                onClick={handleLogin}
               />
             </ButtonContainer>
           </FieldWrapper>
