@@ -14,18 +14,17 @@ import {
   Title,
   Wrapper,
 } from "./login.styled";
-import LoginBg from "./../../assets/images/login_bg.png";
-import AppLogo from "./../../assets/icons/app_logo.png";
+import LoginBg from "./../../assets/images/login_bg_new.png";
+import AppLogo from "./../../assets/icons/Synergech_logo.png";
 import SharedTextfield from "../../components/SharedTextField";
 import SharedButton from "../../components/SharedButton";
 import { useState } from "react";
-import { AlternateEmail } from "@mui/icons-material";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { Email } from "@mui/icons-material";
+import { useMediaQuery } from "@mui/material";
 import { customAxios } from "../../api/axios";
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const theme = useTheme()
   const isSmallScreen = useMediaQuery('(max-width: 800px)')
 
   const handleLogin = () => {
@@ -54,7 +53,7 @@ const Login = () => {
               <Label>Email</Label>
               <SharedTextfield
                 type="text"
-                endAdornment={<AlternateEmail />}
+                endAdornment={<Email sx={{width: "75%"}} />}
                 width="100%"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -66,11 +65,11 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <Label  style={{ cursor: "pointer", textAlign: "center", color: theme.palette.primary.main}}>forgot password?</Label>
             </FieldContainer>
             <ButtonContainer>
               <SharedButton
-                width="60%"
+                width="50%"
+                height="45px"
                 type="primary"
                 text="Login"
                 onClick={handleLogin}

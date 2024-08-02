@@ -8,10 +8,11 @@ interface ButtonProps {
   endIcon?: React.ReactNode;
   disabled?: boolean;
   width?: string;
+  height?: string;
   onClick: ()=>void;
 }
 const SharedButton = (props: ButtonProps) => {
-  const { type, text, startIcon, endIcon, disabled, width, onClick } = props;
+  const { type, text, startIcon, endIcon, disabled, width, height, onClick } = props;
   const theme = useTheme();
   return (
     <Button
@@ -19,11 +20,16 @@ const SharedButton = (props: ButtonProps) => {
       sx={{
         color:
           type === "primary"
-            ? theme.palette.secondary.light
+            ? "#FFFFFF"
             : theme.palette.primary.main,
         borderRadius: "10px",
         textTransform: 'none',
-        width: width
+        width: width,
+        height: height,
+        fontSize: "18px",
+        fontFamily: "Noto Sans SC",
+        fontWeight: 600,
+        lineHeight: "16px"
       }}
       startIcon={startIcon}
       endIcon={endIcon}

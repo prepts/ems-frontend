@@ -28,6 +28,7 @@ const SharedTextfield = (props: TextFieldProps) => {
       value={value}
       onChange={onChange}
       type={type==="password" ? showPassword ? "text" : "password" : type}
+      helperText={" "}
       sx={{
         width: width,
         "& .MuiOutlinedInput-root": {
@@ -50,9 +51,8 @@ const SharedTextfield = (props: TextFieldProps) => {
               onMouseDown={handleMouseDownPassword}
               edge="end"
               color="primary"
-              size="small"
             >
-              {type==="text" ? endAdornment : showPassword ? <VisibilityOff /> : <Visibility />}
+              {type==="text" ? endAdornment : showPassword ? <VisibilityOff sx={{width: "75%"}} /> : <Visibility sx={{width: "75%"}} />}
             </IconButton>
           </InputAdornment>
         ),
@@ -63,7 +63,6 @@ const SharedTextfield = (props: TextFieldProps) => {
               aria-label="icon"
               edge="start"
               color="primary"
-              size="small"
             >
               {startAdornment}
             </IconButton>

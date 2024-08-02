@@ -1,5 +1,4 @@
 import { Box, styled } from "@mui/material";
-
 export const Wrapper = styled(Box)(() => ({
     width: "100vw",
     height: "100vh",
@@ -25,12 +24,12 @@ export const BgWrapper = styled(Box)(({theme}) => ({
     justifyContent: "center",
     alignItems: "center",
     border: `1px solid ${theme.palette.primary.light}`,
-    borderRadius: "0px 36px 36px 0px",
-    borderRightWidth: "5px"
+    borderRadius: "0 36px 36px 0",
+    borderRightWidth: "5px",
 }))
 
 export const Image = styled('img')(() => ({
-    width: "80%",
+    width: "100%",
 }))
 export const LogoContainer = styled(Box)(() => ({
     width: "100%",
@@ -44,7 +43,7 @@ export const LogoContainer = styled(Box)(() => ({
     }
 }))
 export const Logo = styled('img')(() => ({
-    width: "40%",
+    width: "50%",
 }))
 
 export const FormContainer = styled(Box)(() => ({
@@ -78,7 +77,8 @@ export const Label = styled('p')(() => ({
     fontFamily: "Noto Sans SC",
     color: "#202046",
     fontWeight: 600,
-    lineHeight: "16px"
+    lineHeight: "16px",
+    marginTop: "24px"
 }))
 export const FieldWrapper = styled(Box)(() => ({
     display: "flex",

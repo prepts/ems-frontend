@@ -1,9 +1,10 @@
 import axios from "axios";
 
 const customAxios = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "http://moody-hounds-shake.loca.lt/",
   headers: {
     "Content-Type": "application/json",
+    "bypass-tunnel-reminder": "true" // bypass the athentication for the URL
   },
 });
 
